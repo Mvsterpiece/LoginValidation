@@ -18,10 +18,8 @@ namespace LoginValidation
 
             if (login == userName && password == userPassword)
             {
-                Console.WriteLine("Welcome!);
+                Console.WriteLine("Welcome!");
             }
             else
             {
                 Console.WriteLine("Oooops,something is wrong");
-    }
-}
