@@ -1,25 +1,38 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30517.126
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginValidation", "LoginValidation\LoginValidation.csproj", "{78793649-AE27-422A-B50C-D72728E269E5}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{78793649-AE27-422A-B50C-D72728E269E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78793649-AE27-422A-B50C-D72728E269E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78793649-AE27-422A-B50C-D72728E269E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78793649-AE27-422A-B50C-D72728E269E5}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5886833E-AD4E-48C2-89B1-B8429717311D}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Diagnostics;
+
+namespace LoginValidation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string login = "admin";
+            string password = "pass1234";
+            string userName, userPassword;
+            int tries = 0;
+            while (tries != 3)
+            {
+                Console.WriteLine("Enter your username: ");
+                userName = Console.ReadLine();
+                Console.WriteLine("Enter your password");
+                userPassword = Console.ReadLine();
+
+                if (login != userName || password != userPassword)
+                {
+                    Console.WriteLine("Oooops,something is wrong");
+                    tries++;
+                    Console.WriteLine($"{3-tries} attempts left");
+                }
+                else
+                {
+                    Console.WriteLine("Welcome!");
+                    break;
+                }
+
+
+
+            }
+        }
+    }
+}
